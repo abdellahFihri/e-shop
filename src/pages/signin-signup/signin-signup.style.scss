@@ -1,0 +1,14 @@
+.sign-in-sign-up{
+    width: 70%;
+    display:flex;
+    justify-content: space-between;
+    margin:20px   auto;
+}
+@media only screen and (max-width:1180px){
+    .sign-in-sign-up{
+        flex-direction: column;
+        justify-content: center;
+        width:60%;
+        margin:10px 22px auto;
+    }
+}

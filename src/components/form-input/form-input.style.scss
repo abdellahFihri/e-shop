@@ -2,8 +2,8 @@ $sub-color: grey;
 $main-color: black;//variables
 
 @mixin shrinkLabel {// @mixin are reusable css that we can add later 
-  top: -14px;
-  font-size: 12px;
+  top: -25px;
+  font-size: 18px;
   color: $main-color;
 }
 

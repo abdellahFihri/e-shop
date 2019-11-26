@@ -1,10 +1,11 @@
 body{
   font-family: 'Open Sans Condensed', sans-serif;
   padding:20px 60px;
+  background: linear-gradient(to right, #62f3a3 0%,#2d9ef5 72%);
 }
 a{
   text-decoration: none;
-  color: black;
+  color:black;
 }
 *{
   box-sizing: border-box;

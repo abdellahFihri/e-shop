@@ -15,6 +15,26 @@ const config={
 
   firebase.initializeApp(config)
 
+  export const createUserProfileDocument=async (userAuth,additionalData)=>{
+    if (!userAuth)return;//no user auth will just return(do nothing)
+
+    const userRef=firestore.doc(`users/${userAuth.uid}`) // this gets all the object of the user will generate each uid of th user that sign in with google
+    const snapShot= await userRef.get() // pass it into a snapshot with await(snapshot gets us onlty a representation of data no CRUD)
+
+    if(!snapShot.exists){// will check the exists property which is a boolean 
+  const {displayName,email}=userAuth; //deconstructure the properties we need from userAuth
+  const createdAt= new Date();//create date of creation of the record
+  try{
+await userRef.set({displayName,email,createdAt,...additionalData})// will create user  records
+  }
+  catch (error){
+console.log('error creating user', error.message)
+  }
+
+    }
+   return userRef;   //after all it will still return userRef , we may need it still to do something else
+  }
+
   export const auth=firebase.auth()
   export  const firestore =firebase.firestore()
 

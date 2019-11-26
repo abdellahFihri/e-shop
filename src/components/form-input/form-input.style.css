@@ -19,8 +19,8 @@
   outline: none;
 }
 .group .form-input:focus ~ .form-input-label {
-  top: -14px;
-  font-size: 12px;
+  top: -25px;
+  font-size: 18px;
   color: #000;
 }
 .group input[type="password"] {
@@ -37,7 +37,7 @@
   transition: 300ms ease all;
 }
 .group .form-input-label.shrink {
-  top: -14px;
-  font-size: 12px;
+  top: -25px;
+  font-size: 18px;
   color: #000;
 }
