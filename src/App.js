@@ -26,13 +26,13 @@ class App extends React.Component {
           this.setState({
             currentUser: { id: snapshot.id, ...snapshot.data() }
           }); //will create additional properties from snap.data in the currentuser in state
-          console.log(this.state)
         });
       } 
         this.setState({ currentUser: userAuth }); //always set currentuser to userAuth to prevent leaks
       
     }); // access to user porps n methods
     
+
   }
   componentWillUnmount() {
     this.unsubscribeFromAuth();
