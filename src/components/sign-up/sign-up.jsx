@@ -11,7 +11,7 @@ class SignUp extends Component {
     event.preventDefault();
     const { displayName, email, password, confirmPassword } = this.state;
     if(password!==confirmPassword){
-alert('Password and confirmed password do not mach')//in case passwords are not matching  return n do nothing
+alert('Password confirmation failed')//in case passwords are not matching  return n do nothing
 return;
     }
     try{
