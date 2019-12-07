@@ -2,7 +2,10 @@ import React from "react";
 import { Route, Switch,Redirect } from "react-router-dom";
 import {connect} from 'react-redux'
 import {setCurrentUser}from './redux/user/user.action'
+import {selectCurrentUser } from './redux/user/user.selector'// import selector n use in mapstate to props
+import {createStructuredSelector} from 'reselect'//strucutredselector to use multi selectors
 import HomePage from "./pages/homepage/homepage.component";
+import CheckOutPage from './pages/check-out/check-out'
 import ShopPage from "./pages/shop/shop.component";
 import Header from "./components/header/header";
 import SignInSignUp from "./pages/signin-signup/signin-signup";
@@ -47,6 +50,7 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route exact path='/checkout' component={CheckOutPage}/>
           <Route path="/shop" component={ShopPage} />
           <Route exact path="/signin" render={()=>this.props.currentUser?(<Redirect to='./'/>):(<SignInSignUp/>)} /> {/* redirect to main page is user is signed in */}
         </Switch>
@@ -54,11 +58,11 @@ class App extends React.Component {
     );
   }
 }
- const mapStateToProps = ({user}) => {
-  return {
-    currentUser: user.currentUser
-  }
-}
+ const mapStateToProps =createStructuredSelector ( {
+ 
+    currentUser: selectCurrentUser
+  
+})
  const mapDispatchToProps = (dispatch) => ({
  setCurrentUser:user=>dispatch(setCurrentUser(user))//dispatching the object n retrieving the user from it (currentUser)
 })

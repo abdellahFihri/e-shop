@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import {toggleCartHidden} from '../../redux/cart/cart.action'
+import {createStructuredSelector} from 'reselect'
 import {selectCartItemsCount} from '../../redux/cart/cart.selectors'
 import './cart-icon.scss';
 
@@ -15,8 +16,8 @@ const CartIcon=({toggleCartHidden,itemCount})=>(
 const  mapDispatchToProps = (dispatch) => ({
     toggleCartHidden:()=>dispatch(toggleCartHidden())
 })
-const mapStateToProps = (state) => ({//passing the wohle state as argument to the selector
-   itemCount:selectCartItemsCount(state)//state to this selector so it can select the piece of state it needs to update
+const mapStateToProps =createStructuredSelector({//passing the wohle state as argument to the selector
+   itemCount:selectCartItemsCount//state to this selector so it can select the piece of state it needs to update
 })
 
   

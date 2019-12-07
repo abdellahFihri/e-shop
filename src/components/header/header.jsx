@@ -3,6 +3,9 @@ import CartIcon from '../cart-icon/cart-icon'
 import Cart from '../cart/cart.dropdown'
 import {connect} from 'react-redux' //connects component to redux
 import {Link} from 'react-router-dom'
+import {createStructuredSelector} from 'reselect'
+import {selectCartHidden} from '../../redux/cart/cart.selectors'
+import {selectCurrentUser} from '../../redux/user/user.selector'
 import './header.style.scss';
 import {auth} from '../../firebase/firebase'
 import  {ReactComponent as Logo} from '../../assets/crown.svg'//import svg as a component
@@ -34,8 +37,8 @@ const Header=({currentUser,hidden})=>(
     }
     </div>
 )
- const mapStateToProps = ({user:{currentUser},cart:{hidden}}) => ({//advanced distructuring
-    currentUser:currentUser,
-   hidden:hidden
+ const mapStateToProps =  createStructuredSelector({//structured selector will respectively pass functions to properties
+    currentUser:selectCurrentUser,
+   hidden:selectCartHidden
 })
 export default connect(mapStateToProps)(Header)
