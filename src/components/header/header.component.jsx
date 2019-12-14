@@ -9,14 +9,14 @@ import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 
-import { ReactComponent as Logo } from '../../assets/crown.svg';
-
+// import { ReactComponent as Logo } from '../../assets/crown.svg';
+import logo from  '../../assets/favicon.png'
 import './header.styles.scss';
 
 const Header = ({ currentUser, hidden }) => (
   <div className='header'>
     <Link className='logo-container' to='/'>
-      <Logo className='logo' />
+      <img id='logo'  alt="logo" src={logo} />
     </Link>
     <div className='options'>
       <Link className='option' to='/shop'>
