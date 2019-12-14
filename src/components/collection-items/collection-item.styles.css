@@ -1,5 +1,5 @@
 .collection-item {
-  width: 22%;
+  width: 22vw;
   display: flex;
   flex-direction: column;
   height: 350px;
@@ -40,4 +40,13 @@
 }
 .collection-item .collection-footer .price {
   width: 10%;
+}
+@media only screen and (max-width: 800px) {
+  .collection-item {
+    width: 100%;
+    flex-direction: column;
+  }
+  .collection-item {
+    margin-bottom: 25px;
+  }
 }
