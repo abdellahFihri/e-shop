@@ -9,6 +9,12 @@
     height: 100%;
     width: 70px;
     padding: 25px;
+    right:10px;
+    top:10px;
+    margin-left:-40px;
+    margin-top: -20px;
+    
+   
   }
 
   .options {
@@ -26,4 +32,6 @@
 }
 #logo{
   width: 50px;
+  animation:rotate-in-center .6s cubic-bezier(.25,.46,.45,.94) .5s both
 }
+@keyframes rotate-in-center{0%{transform:rotate(-360deg);opacity:0}100%{transform:rotate(0);opacity:1}}

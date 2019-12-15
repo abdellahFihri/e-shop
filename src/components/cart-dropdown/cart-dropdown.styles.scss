@@ -1,3 +1,4 @@
+
 .cart-dropdown {
   position: absolute;
   width: 240px;
@@ -10,6 +11,15 @@
   top: 90px;
   right: 40px;
   z-index: 5;
+  
+  animation:slide-in-top .5s cubic-bezier(.25,.46,.45,.94)  both;
+@media only screen and (max-width:800px){
+ 
+  width: 100%;
+  top:90px;
+  right:0;
+  
+}
 
   .empty-message {
     font-size: 18px;
@@ -27,3 +37,4 @@
     margin-top: auto;
   }
 }
+@keyframes slide-in-top{0%{transform:translateY(-1000px);opacity:0}100%{transform:translateY(0);opacity:1}};

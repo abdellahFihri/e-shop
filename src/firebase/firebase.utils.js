@@ -3,13 +3,14 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-  apiKey: 'AIzaSyCdHT-AYHXjF7wOrfAchX4PIm3cSj5tn14',
-  authDomain: 'crwn-db.firebaseapp.com',
-  databaseURL: 'https://crwn-db.firebaseio.com',
-  projectId: 'crwn-db',
-  storageBucket: 'crwn-db.appspot.com',
-  messagingSenderId: '850995411664',
-  appId: '1:850995411664:web:7ddc01d597846f65'
+  apiKey: "AIzaSyAKZ0Dgq5oxNHrW-LPhMMV_Tw-kpbRfGzo",
+  authDomain: "fihri-e-shop.firebaseapp.com",
+  databaseURL: "https://fihri-e-shop.firebaseio.com",
+  projectId: "fihri-e-shop",
+  storageBucket: "fihri-e-shop.appspot.com",
+  messagingSenderId: "389040575267",
+  appId: "1:389040575267:web:0bd977a2af1a82dd153296",
+  measurementId: "G-S0K7DGSYHJ"
 };
 
 firebase.initializeApp(config);

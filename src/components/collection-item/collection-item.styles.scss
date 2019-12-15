@@ -5,6 +5,10 @@
   height: 350px;
   align-items: center;
   position: relative;
+  @media only screen and (max-width:800px){
+    width:100%;
+    margin-bottom: 25px;
+  }
 
   .image {
     width: 100%;
@@ -20,6 +24,7 @@
     position: absolute;
     top: 255px;
     display: none;
+
   }
 
   &:hover {
@@ -30,7 +35,9 @@
     .custom-button {
       opacity: 0.85;
       display: flex;
+      animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both
     }
+    @keyframes scale-up-center{0%{transform:scale(.5)}100%{transform:scale(1)}}
   }
 
   .collection-footer {
